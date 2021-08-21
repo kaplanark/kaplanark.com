@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ("../partials/header.ejs") %>
+</head>
+<body onload='clock()'>
+    <%- include ("../partials/nav.ejs") %>
+    <section class="show-blog">
+        <div class="container">
+            <header>
+                <h2><%= found.title %></h2>
+            </header>
+            <div class="row justify-content-center">
+                <div class="blog-image col-lg-5">
+                    <img class="img-fluid" src="<%= found.image %>" alt="">
+                </div>
+                <div class="blog-image col-lg-5">
+                    <p><%= found.subtitle %></p>
+                    <time><%= found.date %></time>
+                </div>
+            </div>
+        </div>
+        <article>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 mx-auto">
+                        <%- found.blog %>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+    <%- include ("../partials/footer.ejs") %>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ("../partials/header.ejs") %>
+    <style>
+        .signup-area{
+            background: white;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            border: 2px solid rgb(207, 207, 207);
+            border-radius: 24px;
+            border-style: dotted;
+        }
+        .signup-form input{
+            border-radius: 12px;
+        }
+        .btn-submit{
+            padding-top: 8px;
+            padding-bottom: 8px;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            border-radius: 24px;
+        }
+        .login-alt{
+            font-size: 32px;
+        }
+    </style>
+</head>
+<body>
+    <%- include ("../partials/bar.ejs") %>
+    <section class="formsection" style="margin-top: 10rem;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-3">
+                    <div class="card signup-area">
+                        <div class="card-header d-flex justify-content-around login-alt px-1">
+                            <a class="text-danger" href=""><i class="bi bi-google"></i></a>
+                            <a class="text-dark" href=""><i class="bi bi-github"></i></a>
+                            <a class="text-primary" href=""><i class="bi bi-facebook"></i></a>
+                        </div>
+                        <div class="card-body">
+                            <form action="/signin" method="POST" class="signin-form">
+                                <div class="mb-4">
+                                    <label class="form-label">Username</label>
+                                    <input type="text" class="form-control" name="username">
+                                  </div>
+                                <div class="mb-4">
+                                    <label class="form-label">Password</label>
+                                  <input type="password" class="form-control" name="password">
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-secondary btn-submit">Signin</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

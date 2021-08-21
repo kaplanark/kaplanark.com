@@ -1,0 +1,498 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Raleway&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
+*,
+*::after,
+*::before{
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #eee;
+  color: #333;
+}
+/*Music Player*/
+.music-player {
+  position: fixed;
+  text-align: center;
+  width: 48px;
+  z-index: 3;
+  top: 40%;
+  right: 0;
+  background: #fff;
+  border-radius: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.music-player .play-pause {
+  font-size: 32px;
+  color: #999;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.music-player .play-pause i {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+.music-player .play-pause:hover {
+  color: #444;
+  transition: 0.5s ease;
+}
+.music-player .play-next {
+  font-size: 32px;
+  color: rgb(141, 136, 136);
+}
+.music-player .play-next:hover {
+  color: #444;
+  transition: 0.5s ease;
+}
+.music-player .play-again {
+  font-size: 24px;
+  color: #999;
+}
+.music-player .play-again:hover {
+  color: #444;
+  transition: 0.5s ease;
+}
+/**/
+.btn-danger {
+  background: linear-gradient(to left, #f13c4e 50%, #dc3545 50%) !important;
+  margin: 6px;
+  border: 0;
+  padding-top: 11px;
+  padding-bottom: 10px;
+}
+.btn-danger:hover{
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transition: 0.5s ease;
+}
+.btn-primary {
+  background: linear-gradient(to left, #247cff 50%, #0d6efd 50%) !important;
+  margin: 6px;
+  border: 0;
+  padding-top: 11px;
+  padding-bottom: 10px;
+}
+.btn-primary:hover{
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transition: 0.5s ease;
+}
+a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+a:hover{
+  color: white;
+}
+h1,
+h2,
+h3,
+h5,
+h6 {
+  color: #222 !important;
+}
+h4 {
+  color: #333;
+}
+header {
+  margin-top: 2rem;
+  padding-top: 8rem;
+  padding-bottom: 5rem;
+  text-align: center;
+}
+/*Tools Buttons*/
+.tool-buttons #viewall {
+  font-size: 42px;
+  color: #222;
+}
+.tool-buttons #hideall {
+  font-size: 42px;
+  color: #888;
+}
+section {
+  padding-bottom: 2rem;
+}
+.text-light {
+  color: rgb(231, 231, 231) !important;
+}
+/*Top Bar*/
+.top-bar {
+  background-color: #ffff;
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  width: 100%;
+  height: 32px;
+  font-size: 15px;
+}
+.top-bar .container {
+  height: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.top-bar .top-bar-item {
+  width: 100%;
+}
+.top-bar a {
+  font-weight: 600;
+  color: #444;
+}
+/*Navigation Bar*/
+.navbar-brand{
+  height: 48px;
+  color: #888;
+}
+.navbar-brand i:hover{
+  color: #444;
+  transition: 0.5s ease;
+}
+#mainnav {
+  background-color: #ffff;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  padding: 0px;
+  top: 33px;
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+  transition: top 0.3s;
+}
+.navbar-toggler i{
+  color: #888;
+  font-size: 32px;
+
+}
+.navbar-toggler i:hover{
+  color: #444;
+  transition: 0.3 ease;
+}
+
+#navbarcontent {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+#navbarcontent ul {
+  padding: 0px;
+  margin: 0px;
+}
+
+#navbarcontent ul li a i {
+  margin-right: 10px;
+}
+
+#navbarcontent li {
+  list-style-type: none;
+  float: left;
+}
+
+#navbarcontent ul li a {
+  color: #444;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 15px;
+  display: block;
+  padding: 20px 20px;
+  transition-duration: 0.6s;
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  position: relative;
+}
+
+#navbarcontent > ul > li.active > a {
+  font-weight: 600;
+  color: #333;
+  background-color: transparent;
+  transition: all 0.7s;
+}
+
+#navbarcontent a:not(:only-child):after {
+  content: "\f105";
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 14px;
+  font-family: "Font Awesome 5 Free";
+  display: inline-block;
+  padding-right: 3px;
+  vertical-align: middle;
+  font-weight: 900;
+  transition: 0.5s;
+}
+
+#navbarcontent .active > a:not(:only-child):after {
+  transform: rotate(90deg);
+}
+
+.hori-selector {
+  display: inline-block;
+  position: absolute;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  transition-duration: 0.6s;
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  background-color: #eee;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  margin-top: 10px;
+}
+
+.hori-selector .right,
+.hori-selector .left {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-color: #eee;
+  bottom: 10px;
+}
+
+.hori-selector .right {
+  right: -25px;
+}
+
+.hori-selector .left {
+  left: -25px;
+}
+
+.hori-selector .right:before,
+.hori-selector .left:before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ffff;
+}
+
+.hori-selector .right:before {
+  bottom: 0;
+  right: -25px;
+}
+
+.hori-selector .left:before {
+  bottom: 0;
+  left: -25px;
+}
+/*Welcome*/
+#welcome {
+  width: 100%;
+  margin-bottom: 10rem;
+  padding-top: 15rem;
+}
+.social-bar {
+  margin-bottom: 1rem;
+}
+.social-bar a {
+  color: #555;
+  font-size: 22px;
+}
+#profile {
+  height: 192px;
+  width: 192px;
+  border-radius: 50%;
+}
+
+.section-footer {
+  background: #fff;
+  padding: 12px;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+}
+.section-footer a,
+span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+/*Blog Section*/
+.blog-col {
+  margin-bottom: 1rem;
+}
+.blog-col a {
+  color: #333;
+}
+.card {
+  font-size: 14px;
+  background-color: transparent;
+  border: 0;
+  border-radius: 12px;
+  height: 100%;
+}
+.card-header,
+.card-footer {
+  background: transparent;
+  border: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.card-header,
+.card-footer {
+  text-align: center;
+}
+.card-header img {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  width: 100%;
+}
+/*Project Section*/
+.pro-col{
+  padding-bottom: 1rem;
+}
+.project-card{
+  display: flex;
+  background-color: #444;
+  height: 200px; 
+  border: 1px solid #444;
+  border-radius: 12px;
+}
+.project-card.bar{
+  border-top-left-radius: 12px; 
+  border-bottom-left-radius: 12px;
+}
+.bar-list{
+  list-style-type:none; 
+  margin: 0; 
+  padding: 0;
+}
+.bar-link{
+  color: whitesmoke;
+  padding-top: 1rem; 
+  padding-left: 1rem; 
+  padding-right: 1rem;
+}
+.project-card-main{
+  background: whitesmoke;
+  width: 100%;
+  border-bottom-right-radius: 12px;
+  border-top-right-radius: 12px; 
+}
+
+@media (min-width: 992px) {
+  .navbar-expand-custom {
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+
+  .navbar-expand-custom .navbar-nav {
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+
+  .navbar-expand-custom .navbar-toggler {
+    display: none;
+  }
+
+  .navbar-expand-custom .navbar-collapse {
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -ms-flex-preferred-size: auto;
+    flex-basis: auto;
+  }
+}
+
+@media (max-width: 720px){
+  #welcome {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  header{
+    margin-top: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 991px) {
+  #navbarcontent ul li a {
+    padding: 12px 30px;
+    
+  }
+  .pvw-title span{
+    display: none;
+  }
+  .pvw-title:after {
+    content: 'listening music and relax';
+  }
+  .navbar-brand i{
+    display: none;
+    
+  }
+  .navbar{
+    padding-bottom: 15px !important;
+  }
+  .hori-selector {
+    margin-top: 0;
+    margin-left: 0;
+    border-radius: 25px;
+    
+  }
+
+  .hori-selector .left,
+  .hori-selector .right {
+    display: none;
+    right: 10px;
+  }
+
+  .hori-selector .left {
+    top: -25px;
+    left: auto;
+  }
+
+  .hori-selector .right {
+    bottom: -25px;
+  }
+
+  .hori-selector .left:before {
+    left: -25px;
+    top: -25px;
+  }
+
+  .hori-selector .right:before {
+    bottom: -25px;
+    left: -25px;
+  }
+  #welcome {
+    margin-bottom: 4rem;
+  }
+  #backend,#frontend{
+    display: none;
+  }
+  .music-player {
+    position: relative;
+    top: -6rem;
+    transform: rotateZ(90deg);
+    right: unset;
+    background: #fff;
+    border-radius: 24px;
+  }
+  .music-player .play-pause {
+    transform: rotateZ(-90deg);
+  }
+  .music-player .play-pause i {
+    border-bottom: 0;
+    border-top: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-right: 1px solid #eee;
+    border-left: 1px solid #eee;
+  }
+  .music-player .play-next {
+    transform: rotateZ(90deg);
+  }
+  .music-player .play-again {
+    transform: rotateZ(-90deg);
+  }
+}
+@media (min-width: 1900px) {
+  #welcome {
+    margin-bottom: 15rem;
+  }
+}

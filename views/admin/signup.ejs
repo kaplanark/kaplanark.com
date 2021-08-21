@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ("../partials/header.ejs") %>
+    <style>
+        .signup-area{
+            background: white;
+            padding-top: 2rem;
+            padding-bottom: 3rem;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            border: 2px solid rgb(207, 207, 207);
+            border-radius: 24px;
+            border-style: dotted;
+        }
+        .signup-form input{
+            border-radius: 12px;
+        }
+        .btn-submit{
+            padding-top: 8px;
+            padding-bottom: 8px;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            border-radius: 24px;
+        }
+    </style>
+</head>
+<body onload='clock()'>
+    <%- include ("../partials/nav.ejs") %>
+    <section class="formsection" style="height: 100vh;">
+        <div class="container">
+            <header>
+                <h2 id="formtitle">Signup Form</h2>
+            </header>
+            <div class="row justify-content-center">
+                <div class="col-md-3 signup-area mx-5">
+                    <form action="/signup" method="POST" class="signup-form">
+                        <div class="mb-4">
+                            <label class="form-label">Username</label>
+                            <input type="text" class="form-control" name="username">
+                          </div>
+                        <div class="mb-4">
+                            <label class="form-label">Password</label>
+                          <input type="password" class="form-control" name="password">
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-secondary btn-submit">Signup</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <%- include ("../partials/footer.ejs") %> 
+</body>
+</html>

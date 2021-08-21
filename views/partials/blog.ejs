@@ -1,0 +1,41 @@
+<!--blog section-->
+<section id="blogpost">
+    <div class="container">
+        <header>
+            <h2 id="blogtitle">Latest Blog Posts</h2>
+        </header>
+        
+        <div class="row">
+            <% found.forEach((call)=>{ %>
+            <div class="col-lg-4 blog-col">
+                <a href="/blogs/<%= call._id %>">
+                    <div class="blog-card card shadow-sm">
+                        <div class="card-header">
+                            <img src="<%= call.image %>" class="img-fluid" alt="">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h4> <%= call.title %> </h4>
+                            </div>
+                            <p>
+                                <%= call.subtitle %>
+                            </p>
+                            <div class="card-footer tag text-start">
+                                <time>
+                                    <%= call.date %>
+                                </time>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <% }); %>
+        </div>
+        
+    </div>
+    <div class="tool-buttons text-center">
+        <a type="button" id="viewall"><i class="bi bi-chevron-compact-down"></i></a>
+        <a type="button" id="hideall"><i class="bi bi-chevron-compact-up"></i></a>
+    </div>
+</section>
+<!--blog section-->

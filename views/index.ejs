@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <%- include ("./partials/header.ejs") %>
+  </head>
+
+  <body onload='clock()'>
+    <%- include ("./partials/nav.ejs") %>
+      <div id="welcome" class="container text-center">
+        <img id="profile" calss="img-fluid" src="./images/profile.jpg" alt="">
+        <code class="display-6"><p>Junior Web Developer</p></code>
+        <div class="social-bar text-center">
+          <a class="me-4" href="https://twitter.com/" target="_blank"><i class="bi bi-twitter"></i></a>
+          <a class="me-4" href="mailto:kaplanarkan@gmail.com"><i class="bi bi-envelope-fill"></i></a>
+          <a class="me-4" href="https://github.com/kaplanark" target="_blank"><i class="bi bi-github"></i></a>
+          <a class="me-1" href="https://www.linkedin.com/in/kaplan-arkan-2a5747158/" target="_blank"><i
+              class="bi bi-linkedin"></i></a>
+        </div>
+        <p class="pvw-title"><span>make up your mind now</span></p>
+        <button id="backend" class="btn btn-danger rounded-pill">back-end developer</button>
+        <button id="frontend" class="btn btn-primary rounded-pill">front-end developer</button><br>
+      </div>
+      <div id="musicplayer" class="music-player mx-auto shadow-sm">
+        <div class="row">
+          <script type="text/javascript">
+            function playauido() { document.getElementById("audio").play(); };
+            function pauseauido() { document.getElementById("audio").pause(); };
+            function restartaudio() { document.getElementById("audio").currentTime = 0; }
+          </script>
+          <audio id="audio" src="./adamlar-zombi.mp3"></audio>
+          <a type="button" href="javascript:pauseauido();" class="play-next"><i class='bi bi-pause'></i></a></a>
+          <a type="button" href="javascript:playauido();" class="play-pause"><i class="bi bi-play"></i></a>
+          <a type="button" href="javascript:restartaudio();" class="play-again"><i class="bi bi-arrow-clockwise"></i></a>
+        </div>
+      </div>
+      <%- include ("./partials/blog.ejs") %>
+      <%- include ("./partials/projects.ejs") %>
+      <%- include ("./partials/about.ejs") %>
+      <%- include ("./partials/contact.ejs") %>
+      <%- include ("./partials/footer.ejs") %>
+  </body>
+</html>

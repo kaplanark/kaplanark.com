@@ -18,7 +18,7 @@ const blogRoutes = require("./routes/blogRoutes");
 
 //mongose config
 //const uri = 'mongodb://localhost/blog-app';
-mongoose.connect(process.env.CONNECTION_URL,{useNewUrlParser: true,useUnifiedTopology: true});
+mongoose.connect(process.env.DATABASE_URL,{useNewUrlParser: true,useUnifiedTopology: true});
 
 //app config
 app.set("view engine", "ejs");

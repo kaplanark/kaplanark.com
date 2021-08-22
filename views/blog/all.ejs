@@ -77,102 +77,24 @@
                 </div>
             </div>
           <div class="row">
-            <div class="col-lg-4 blog-post">
-              <a href="../show.html">
-                <div class="post-card card shadow-sm">
-                  <div class="card-header">
-                    <img src="../img/docker.png"  class="img-fluid" alt="">
-                  </div>
-                  <div class="card-body">
-                    <div class="card-title"><h4>İnstall Cloud Ready</h4></div>
-                    <p>Lorem ipsum dolor sit amet consit. Nemo eius natus sapiente voluptate repudiandae. Cupiditate placeat, sequi, obcaecati earum maxime nulla facilis omnis sed voluptatem dolor aperiam deserunt modi repudiandae.</p>
-                    <div class="card-footer tag">
-                      <div class="b-dot"></div>
-                      <time>12.02.2020</time> 
+            <% found.forEach((call)=>{ %>
+              <div class="col-lg-4 blog-post">
+                <a href="/blogs/<%= call._id %>">
+                  <div class="post-card card shadow-sm">
+                    <!-- <div class="card-header">
+                      <img src="<%= call.image %>"  class="img-fluid" alt="">
+                    </div> -->
+                    <div class="card-body">
+                      <div class="card-title"><h4><%= call.title %></h4></div>
+                      <p><%= call.subtitle %></p>
+                      <div class="card-footer tag">
+                        <time><%= call.date %></time> 
+                      </div>
                     </div>
                   </div>
-                </div>
-              </a>
-            </div>
-            <div class="col-lg-4 blog-post">
-              <div class="post-card card shadow-sm">
-                <div class="card-header">
-                  <img src="../img/bootsrap5.png"  class="img-fluid" alt="">
-                </div>
-                <div class="card-body">
-                  <div class="card-title"><h4>Bootstrap 5.0</h4></div>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo eius natus sapiente voluptate repudiandae. Cupiditate placeat, sequi, obcaecati earum maxime nulla facilis omnis sed voluptatem dolor aperiam deserunt modi repudiandae.</p>
-                  <div class="card-footer tag">
-                    <div class="f-dot"></div>
-                      <time>12.02.2020</time> 
-                  </div>
-                </div>
+                </a>
               </div>
-            </div>
-            <div class="col-lg-4 blog-post">
-              <div class="post-card card shadow-sm">
-                <div class="card-header">
-                  <img src="../img/docker.png"  class="img-fluid" alt="">
-                </div>
-                <div class="card-body">
-                  <div class="card-title"><h4>Docker Kurulumu Ve Kullanımı</h4></div>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo eius natus sapiente voluptate repudiandae. Cupiditate placeat, sequi, obcaecati earum maxime nulla facilis omnis sed voluptatem dolor aperiam deserunt modi repudiandae.</p>
-                  <div class="card-footer tag">
-                    <div class="dot"></div>
-                      <time>12.02.2020</time> 
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 blog-post">
-              <div class="post-card card shadow-sm">
-                <div class="card-header">
-                  <img src="../img/express.png"  class="img-fluid" alt="">
-                </div>
-                <div class="card-body">
-                  <div class="card-title"><h4>Express Js</h4></div>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo eius natus sapiente voluptate repudiandae. Cupiditate placeat, sequi, obcaecati earum maxime nulla facilis omnis sed voluptatem dolor aperiam deserunt modi repudiandae.</p>
-                  <div class="card-footer tag">
-                    <div class="b-dot"></div>
-                    <time>12.02.2020</time> 
-                  </div>
-                </div>  
-              </div>
-            </div>
-            <div class="col-lg-4 blog-post">
-              <div class="post-card card shadow-sm">
-                <div class="card-header">
-                  <img src="../img/gitignore.png"  class="img-fluid" alt="">
-                </div>
-                <div class="card-body">
-                  <div class="card-title">
-                    <h4>Gitignore</h4>
-                  </div>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo eius natus sapiente voluptate repudiandae. Cupiditate placeat, sequi, obcaecati earum maxime nulla facilis omnis sed voluptatem dolor aperiam deserunt modi repudiandae.</p>
-                  <div class="card-footer tag">
-                    <div class="dot"></div>
-                    <time>12.02.2020</time> 
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 blog-post">
-              <div class="post-card card shadow-sm">
-                <div class="card-header">
-                  <img src="../img/mongodb.png"  class="img-fluid" alt="">
-                </div>
-                <div class="card-body">
-                  <div class="card-title">
-                    <h4>MongoDB</h4>
-                  </div>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo eius natus sapiente voluptate repudiandae. Cupiditate placeat, sequi, obcaecati earum maxime nulla facilis omnis sed voluptatem dolor aperiam deserunt modi repudiandae.</p>
-                  <div class="card-footer tag">
-                    <div class="b-dot"></div>
-                    <time>12.02.2020</time> 
-                  </div>
-                </div>
-              </div>
-            </div>
+              <% }); %>
           </div>
         </div>
       </section><!--blog-->

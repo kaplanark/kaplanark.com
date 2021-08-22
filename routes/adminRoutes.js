@@ -1,5 +1,6 @@
 const express = require("express");
 const User = require("../models/userModels");
+const Blog = require("../models/blogModels");
 const passport = require("passport");
 const router = express.Router();
 
@@ -38,8 +39,16 @@ let adminActions = [
 router.get("/admin", access, (req, res) => {
   res.render("admin/admin", { adminActions: adminActions });
 });
-router.get("/admin/all", access, (req, res) => {
-  res.render("blog/all");
+
+//blog all send admin all page
+router.get('/admin/all',access, (req,res)=>{
+  Blog.find({},(err,found)=>{
+      if(err){
+          console.log(err);
+      }else{
+          res.render('blog/all',{found:found});
+      }
+  });
 });
 //signin page router
 router.get("/signin", (req, res) => {

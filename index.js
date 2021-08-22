@@ -11,7 +11,7 @@ const app = express();
 dotenv.config();
 
 
-//routes import(oluşturduğumuz routes modüllerini import etme  !!!usign etmeyi unutma)
+//routes import(!usign)
 const indexRoutes = require("./routes/indexRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 const blogRoutes = require("./routes/blogRoutes");

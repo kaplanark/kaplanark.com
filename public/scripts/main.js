@@ -1,6 +1,42 @@
-window.onscroll = function () {
-  scrollFunction();
-};
+//clock
+function clock() {
+  var topclock, time, h, m;
+  time = new Date();
+  h = time.getHours();
+  m = time.getMinutes();
+  topclock = h + " : " + (m < 10 ? "0" : "") + m;
+  document.getElementById("clock").innerHTML = topclock;
+  setTimeout("clock()", 1000);
+  if (h >= 20 && h <= 24) {
+    document.getElementById("day").innerHTML =
+      "<i class='bi bi-moon-fill'></i>";
+  } else if (h >= 00 && h <= 7) {
+    document.getElementById("day").innerHTML =
+      "<i class='bi bi-moon-fill'></i>";
+  } else {
+    document.getElementById("day").innerHTML = "<i class='bi bi-sun-fill'></i>";
+  }
+}
+//search post
+function findpost() {
+  var input, filter, cards, container, div, title, i;
+  input = document.getElementById("postsearch");
+  filter = input.value.toUpperCase();
+  container = document.getElementById("postcontainer");
+  cards = container.getElementsByClassName("post-card");
+  for (i = 0; i < cards.length; i++) {
+    title = cards[i].querySelector(".card-body div.card-title");
+    if (title.innerText.toUpperCase().indexOf(filter) > -1) {
+      cards[i].style.display = "";
+    } else {
+      cards[i].style.display = "none";
+    }
+  }
+}
+//navigation bar
+// window.onscroll = function () {
+//   scrollFunction();
+// };
 function test() {
   var tabsNewAnim = $("#navbarcontent");
   var selectorNewAnim = $("#navbarcontent").find("li").length;
@@ -45,53 +81,48 @@ $(".navbar-toggler").click(function () {
     test();
   });
 });
-
-
 window.onscroll = function () {
   scrollFunction();
 };
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     document.getElementById("mainnav").style.top = "0";
-    
+
     document.getElementById("brand").innerHTML =
       "<i class='bi bi-chevron-up'></i>";
   } else {
     document.getElementById("mainnav").style.top = "33px";
-    
+
     document.getElementById("brand").innerHTML =
       "<i class='bi bi-chevron-down'></i>";
   }
 }
-$(document).ready(function(){
-  var allcard = document.getElementsByClassName("blog-col");
-  for(i=3;i<allcard.length;i++){
+//ready jquery function
+$(document).ready(function () {
+  var allcard = document.getElementsByClassName("blog-post");
+  for (i = 3; i < allcard.length; i++) {
     $(allcard[i]).hide();
     allcard[i].classList.add("hide");
   }
-  $(".hide").hide();$("#hideall").hide();
-  $("#viewall").click(function(){
-      $("#blogtitle").text("All Blogs");$(".blog-col").slideDown("slow");$("#hideall").show();$("#viewall").hide(); 
+  $(".hide").hide();
+  $("#hideall").hide();
+  $("#viewall").click(function () {
+    $("#blogtitle").text("All Blogs");
+    $(".blog-post").slideDown("slow");
+    $("#hideall").show();
+    $("#viewall").hide();
+    $(".search").css({ display: "block" });
   });
-  $("#hideall").click(function(){
-      $("#blogtitle").text("Latest Blog Posts");$(".hide").slideUp("slow");$("#hideall").hide();$("#viewall").show();
+  $("#hideall").click(function () {
+    $("#blogtitle").text("Latest Blog Posts");
+    $(".hide").slideUp("slow");
+    $("#hideall").hide();
+    $("#viewall").show();
+    $(".search").css({ display: "none" });
   });
-  $("#backend").click(function(){
-    $("#frontend").hide("slow");$("#viewall").click();$("div.card-footer").html("<div class='dot'></div>");
-    //$("div.card-footer:contains('backend')").html("<div class='dot'></div>");
-    $(".dot").css({'background':'#f13c4e','height': '16px','width': '16px','border-radius': '50%'});
-  });
-  $("#frontend").click(function(){
-    $("#backend").hide("slow");$("#viewall").click();$("div.card-footer").html("<div class='dot'></div>");
-    //$("div.card-footer:contains('frontedn')").html("<div class='dot'></div>");
-    $(".dot").css({'background':'#247cff','height': '16px','width': '16px','border-radius': '50%'});
-  });
-  $("#musicplayer .play-pause").click(function(){
-    $("#musicplayer .play-pause").css('cssText', 'color: #f45');
-    $("#musicplayer .play-next").css('cssText', 'color: #777');
-  });
-  $("#musicplayer .play-next").click(function(){
-    $("#musicplayer .play-next").css('cssText', 'color: #f45');
-    $("#musicplayer .play-pause").css('cssText', 'color: #777');
+  //musci player
+  $(".action-btn").click(function () {
+    $(".profile").css({"z-index": "0"});
+    $("#degree-bar").slideUp("slow");
   });
 });

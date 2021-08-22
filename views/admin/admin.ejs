@@ -1,28 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include ("../partials/header.ejs") %>
+    <%- include ("../partials/admin-header.ejs") %>
 </head>
 <body>
-    <%- include ("../partials/bar.ejs") %>
-    <section class="formsection" style="height: 100vh;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 mb-1 d-grid gap-2 btn-group bg-white py-3">
-                    <% adminActions.forEach((action)=>{ %>
-                    <button id="<%=action.actionId%>" onclick="catchId(this.id)" class="btn btn-secondary btn-block rounded-0"><%=action.displayName%></button>   
-                    <% }); %>
-                </div>
-            </div>
-            
-            <script>
-                function catchId(clicked_id){
-                    if(clicked_id==5){
-                        window.location.href='/addnewblog';return false;
-                    }
-                }
-            </script>
-        </div>
-    </section>
+    <%- include ("../partials/admin-topbar.ejs") %>
+    <%- include ("../partials/admin-bar.ejs") %>
+    <%- include ("../partials/admin-footer.ejs") %>
 </body>
 </html>

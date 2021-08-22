@@ -1,35 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include ("../partials/header.ejs") %>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>template</title>
+  <!--favicon-->
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <!--bootstrap 5.1.0-->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" />
+  <!--main stylesheet-->
+  <link rel="stylesheet" href="../stylesheet/main.css">
 </head>
-<body onload='clock()'>
-    <%- include ("../partials/nav.ejs") %>
-    <section class="show-blog">
-        <div class="container">
-            <header>
-                <h2><%= found.title %></h2>
-            </header>
-            <div class="row justify-content-center">
-                <div class="blog-image col-lg-5">
-                    <img class="img-fluid" src="<%= found.image %>" alt="">
-                </div>
-                <div class="blog-image col-lg-5">
-                    <p><%= found.subtitle %></p>
-                    <time><%= found.date %></time>
-                </div>
-            </div>
+
+<body onload="clock()">
+  <%- include ("../partials/topbar.ejs") %>
+  <!--navigation bar-->
+  <nav class="navbar navbar-expand-custom" id="mainnav">
+    <div class="container">
+      <a class="navbar-brand" href=""></a>
+      <a class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarcontent"
+        aria-controls="navbarcontent" aria-expanded="false">
+        <i class="bi bi-list"></i>
+      </a>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarcontent">
+        <ul class="navbar-nav">
+          <div class="hori-selector">
+            <div class="left"></div>
+            <div class="right"></div>
+          </div>
+          <li class="nav-item">
+            <a class="nav-link active" href="/"><i class="bi bi-chevron-left"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--navigation bar-->
+
+  <!--show post-->
+  <section class="show-post">
+    <div class="container col-lg-10">
+      <div class="post-title text-center" style="padding-top: 10rem;">
+        <h3>
+          <%= found.title %>
+        </h3>
+      </div>
+      <div class="sub-title">
+        <p>
+          <%= found.subtitle %>
+        </p>
+      </div>
+      <div class="blog">
+        <%- found.blog %>
+      </div>
+      <div class="row">
+        <div class="col-lg-8"></div>
+        <div class="col-lg-4 text-end">
+          <time>
+            <%= found.date %>
+          </time>
         </div>
-        <article>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-10 mx-auto">
-                        <%- found.blog %>
-                    </div>
-                </div>
-            </div>
-        </article>
-    </section>
-    <%- include ("../partials/footer.ejs") %>
+      </div>
+    </div>
+  </section>
+  <!--projects-->
+  <!--footer-->
+  <footer>
+    <div class="container text-center">
+      <span>Mix :</span>
+      <code>Bootstrap {v5, icons} <span>|</span> JavaScript {jquery, bootsrapjs} <span>|</span> NodeJs {npm,express,express-session,ejs,body-parser,passport,passport-local} <span>|</span> MongoDB {mongoose,passport-local-mongoose"}</code>
+      <span>.</span>
+    </div>
+  </footer>
+  <!--footer-->
+  <!--jquery 3.6.0-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!--bootstrap 4.0.0 scripts-->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+  <!--main scripts-->
+  <script src="../scripts/main.js"></script>
 </body>
+
 </html>

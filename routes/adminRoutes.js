@@ -38,12 +38,15 @@ let adminActions = [
 router.get("/admin", access, (req, res) => {
   res.render("admin/admin", { adminActions: adminActions });
 });
+router.get("/admin/all", access, (req, res) => {
+  res.render("blog/all");
+});
 //signin page router
 router.get("/signin", (req, res) => {
   res.render("admin/signin");
 });
 router.post("/signin",passport.authenticate("local", {
-    successRedirect: "/",
+    successRedirect: "/admin",
     failureRedirect: "/signin",
   }),
   (req, res) => {}

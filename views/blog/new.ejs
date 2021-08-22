@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include ("../partials/header.ejs") %>
+    <%- include ("../partials/admin-header.ejs") %>
     <!--jquery 3.6.0-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
@@ -15,7 +15,7 @@
                     title:title,
                     subtitle:subtitle,
                     image:image,
-                    blog:blog
+                    blog:blog 
                 }
                 $.post('addnewblog',{data:data})
                 .then(function(added){
@@ -26,38 +26,35 @@
     </script>
 </head>
 <body onload='clock()'>
-    <%- include ("../partials/nav.ejs") %>
-    <section class="formsection" style="height: 100vh;">
-        <div class="container">
-            <header>
-                <h2>Add New Blog</h2>
-            </header>
-            <form action="">
-                <div class="form-group">
-                    <label for="blogtitle">Blog Title</label>
-                    <input type="text" class="form-control" id="blogtitle" placeholder="*">
-                </div>
-                <div class="form-group mt-3">
-                    <label for="blogsubtitle">Blog Sub Title</label>
-                    <input type="text" class="form-control" id="blogsubtitle" placeholder="*">
-                </div>
-                <div class="form-group mt-3 mb-4">
-                    <label for="blogimage">Blog İmage</label>
-                    <input type="text" class="form-control" id="blogimage" placeholder="*">
-                </div>
-                <textarea class="form-control" name="editor" id="blogtextarea"></textarea>
-                <div class="mt-3 text-center">
-                    <button id="blogpostsubmit" type="submit" class="btn btn-success">Submit</button>
-                </div>
-            </form>
-        </div>
-    </section>
-    <!--bootstrap 4.0.0 scripts-->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
-    <!--cke editör-->
-    <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
-    <!--main scripts-->
-    <script src="/scripts/main.js"></script>
+    <%- include ("../partials/admin-topbar.ejs") %>
+    <%- include ("../partials/admin-bar.ejs") %>
+
+    <!--add new blog-->
+    <div class="container">
+        <form action="" class="was-validated">
+            <div class="form-group">
+                <label for="blogtitle">Blog Title</label>
+                <input type="text" class="form-control is-invalid" id="blogtitle" placeholder="*" required>
+                <div class="invalid-feedback">Please write something in the text field.</div>
+            </div>
+            <div class="form-group mt-3">
+                <label for="blogsubtitle">Blog Sub Title</label>
+                <input type="text" class="form-control is-invalid" id="blogsubtitle" placeholder="*" required>
+                <div class="invalid-feedback">Please write something in the text field.</div>
+            </div>
+            <div class="form-group mt-3 mb-4">
+                <label for="blogimage">Blog İmage</label>
+                <input type="text" class="form-control is-invalid" id="blogimage" placeholder="*" required>
+                <div class="invalid-feedback">Please write something in the text field.</div>
+            </div>
+            <textarea class="form-control" name="editor" id="blogtextarea"></textarea>
+            <div class="mt-3 text-center">
+                <button id="blogpostsubmit" type="submit" class="btn btn-success rounded-pill" disabled>Add Post</button>
+            </div>
+        </form>
+    </div>
+    <!--add new blog-->
+    <%- include ("../partials/admin-footer.ejs") %>
     <script>
         CKEDITOR.replace('editor');
     </script>

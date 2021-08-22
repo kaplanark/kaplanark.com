@@ -1,0 +1,28 @@
+<!--top bar-->
+<div class="top-bar" id=topbar>
+    <div class="container">
+        <div class="top-bar-item text-center">
+            <a id="day" class="me-2"></a>
+            <a id="clock" class=""></a>
+        </div>
+        <div class="dropdown dropstart">
+            <a class=" dropdown-toggle" href="#" role="button" id="dropdownmenü" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <i class="bi bi-person-circle"></i>
+            </a>
+            <ul class="dropdown-menu shadow-sm" aria-labelledby="dropdownmenü">
+                <li>
+                    <% if(!currentUser){ %>
+                    <a class="dropdown-item" href="/signin">Login</a>
+                    <% } else { %>
+                    <a class="dropdown-item" href="/signout">Logout</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="/admin"><%= currentUser.username %></a>
+                </li>
+                    <% } %>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--top bar-->

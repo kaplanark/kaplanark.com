@@ -2,40 +2,19 @@
 <html lang="en">
 <head>
     <%- include ("../partials/header.ejs") %>
-    <style>
-        .signup-area{
-            background: white;
-            padding-top: 2rem;
-            padding-bottom: 2rem;
-            padding-left: 2rem;
-            padding-right: 2rem;
-            border: 2px solid rgb(207, 207, 207);
-            border-radius: 24px;
-            border-style: dotted;
-        }
-        .signup-form input{
-            border-radius: 12px;
-        }
-        .btn-submit{
-            padding-top: 8px;
-            padding-bottom: 8px;
-            padding-left: 2rem;
-            padding-right: 2rem;
-            border-radius: 24px;
-        }
-        .login-alt{
-            font-size: 32px;
-        }
-    </style>
 </head>
-<body>
-    <%- include ("../partials/bar.ejs") %>
-    <section class="formsection" style="margin-top: 10rem;">
+<body onload='clock()'>
+    <%- include ("../partials/topbar.ejs") %>
+    <!--signin-->
+    <section class="formsection">
         <div class="container">
+            <header>
+                <h2 id="formtitle">Signin</h2>
+            </header>
             <div class="row justify-content-center">
                 <div class="col-md-3">
-                    <div class="card signup-area">
-                        <div class="card-header d-flex justify-content-around login-alt px-1">
+                    <div class="card signin-area">
+                        <div class="d-flex justify-content-around login-alt px-1">
                             <a class="text-danger" href=""><i class="bi bi-google"></i></a>
                             <a class="text-dark" href=""><i class="bi bi-github"></i></a>
                             <a class="text-primary" href=""><i class="bi bi-facebook"></i></a>
@@ -59,6 +38,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section><!--signin-->
+    <%- include ("../partials/admin-footer.ejs") %>
 </body>
 </html>

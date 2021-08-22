@@ -4,13 +4,13 @@
         <div class="col-6 text-start">
             <a class="text-dark h5" href="/"><i class="bi bi-arrow-left"></i></a>
         </div>
-            <div class="col-6 text-end">
-                <% if(!currentUser){ %>
-                    <a class="text-success" href="/signin"><i class="bi bi-person-fill"></i>Login</a>
-                <% } else { %>
-                <a class="text-danger me-2" href="/signout"><i class="bi bi-person-dash-fill"></i></a>
-                <a href="/admin"><%= currentUser.username %></a>
-                <% } %>
-            </div>
+        <div class="col-6 text-end">
+            <% if(!currentUser){ %>
+                <a class="text-success" href="/signin"><i class="bi bi-person-fill"></i>Login</a>
+            <% } else { %>
+            <a class="text-danger me-2" href="/signout"><i class="bi bi-person-dash-fill"></i></a>
+            <a href="/admin"><%= currentUser.username %></a>
+            <% } %>
+        </div>
     </div>
 </div><!--bar-->

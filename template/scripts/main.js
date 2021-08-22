@@ -10,11 +10,9 @@ function clock() {
   if (h >= 20 && h <= 24) {
     document.getElementById("day").innerHTML =
       "<i class='bi bi-moon-fill'></i>";
-    //document.getElementById("css").href="http://127.0.0.1:5500/src/css/dark.css"
   } else if (h >= 00 && h <= 7) {
     document.getElementById("day").innerHTML =
       "<i class='bi bi-moon-fill'></i>";
-    //document.getElementById("css").href="http://127.0.0.1:5500/src/css/dark.css"
   } else {
     document.getElementById("day").innerHTML = "<i class='bi bi-sun-fill'></i>";
   }
@@ -122,23 +120,9 @@ $(document).ready(function () {
     $("#viewall").show();
     $(".search").css({ display: "none" });
   });
-  $("#backend").click(function () {
-    $("#frontend").hide("slow");
-    $("#viewall").click();
-    $("div.b-dot").css({ background: "#f13c4e" });
-  });
-  $("#frontend").click(function () {
-    $("#backend").hide("slow");
-    $("#viewall").click();
-    $("div.f-dot").css({ background: "#247cff" });
-  });
   //musci player
-  $("#musicplayer .play-pause").click(function () {
-    $("#musicplayer .play-pause").css("cssText", "color: #f45");
-    $("#musicplayer .play-next").css("cssText", "color: #777");
-  });
-  $("#musicplayer .play-next").click(function () {
-    $("#musicplayer .play-next").css("cssText", "color: #f45");
-    $("#musicplayer .play-pause").css("cssText", "color: #777");
+  $(".action-btn").click(function () {
+    $(".profile").css({"z-index": "0"});
+    $("#degree-bar").slideUp("slow");
   });
 });

@@ -60,7 +60,7 @@ header {
   background-color: #ffff;
   position: fixed;
   top: 0;
-  z-index: 3;
+  z-index: 5;
   width: 100%;
   font-size: 15px;
 }
@@ -221,15 +221,8 @@ section {
 /*welcome*/
 #welcome {
   width: 100%;
-  margin-bottom: 10rem;
   padding-top: 15rem;
   text-align: center;
-}
-#logo {
-  height: 192px;
-  width: 192px;
-  
-  border-radius: 50%;
 }
 .degree {
   font-size: 38px;
@@ -241,51 +234,9 @@ section {
 .social-links a {
   color: #555;
   font-size: 22px;
-  padding-left: 2rem;
+  padding: 0 1rem 0 1rem;
 }
 /*music player*/
-.music-player {
-  position: fixed;
-  text-align: center;
-  width: 48px;
-  z-index: 3;
-  top: 40%;
-  right: 0;
-  background: #fff;
-  border-radius: 24px;
-  padding-top: 12px;
-  padding-bottom: 12px;
-}
-.music-player .play-pause {
-  font-size: 32px;
-  color: #999;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-.music-player .play-pause i {
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
-}
-.music-player .play-pause:hover {
-  color: #444;
-  transition: 0.5s ease;
-}
-.music-player .play-next {
-  font-size: 32px;
-  color: rgb(141, 136, 136);
-}
-.music-player .play-next:hover {
-  color: #444;
-  transition: 0.5s ease;
-}
-.music-player .play-again {
-  font-size: 24px;
-  color: #999;
-}
-.music-player .play-again:hover {
-  color: #444;
-  transition: 0.5s ease;
-}
 /*tools buttons*/
 .tool-buttons #viewall {
   font-size: 42px;
@@ -302,8 +253,7 @@ section {
 /*blog section*/
 .search {
   display: none;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding: 0 2rem 0 2rem;
   margin-top: 2rem;
 }
 .blog-post {
@@ -347,15 +297,6 @@ section {
   padding-top: 10px;
   border-top: 1px solid rgb(226, 226, 226);
   text-align: center;
-}
-.blog-post .dot,
-.b-dot,
-.f-dot {
-  background: white;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  margin-right: 10px;
 }
 /*project section*/
 .pro-col {
@@ -489,12 +430,6 @@ footer span {
   #navbarcontent ul li a {
     padding: 12px 30px;
   }
-  .pvw-title span {
-    display: none;
-  }
-  .pvw-title:after {
-    content: "listening music and relax";
-  }
   #brand i {
     display: none;
   }
@@ -530,38 +465,6 @@ footer span {
   .hori-selector .right:before {
     bottom: -25px;
     left: -25px;
-  }
-  #welcome {
-    margin-bottom: 4rem;
-  }
-  #backend,
-  #frontend {
-    display: none;
-  }
-  .music-player {
-    position: relative;
-    top: -6rem;
-    transform: rotateZ(90deg);
-    right: unset;
-    background: #fff;
-    border-radius: 24px;
-  }
-  .music-player .play-pause {
-    transform: rotateZ(-90deg);
-  }
-  .music-player .play-pause i {
-    border-bottom: 0;
-    border-top: 0;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-right: 1px solid #eee;
-    border-left: 1px solid #eee;
-  }
-  .music-player .play-next {
-    transform: rotateZ(90deg);
-  }
-  .music-player .play-again {
-    transform: rotateZ(-90deg);
   }
 }
 @media (min-width: 1900px) {

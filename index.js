@@ -5,16 +5,16 @@ const bodyParser = require("body-parser");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const expressSession = require("express-session");
-const User = require("./models/userModels")
+const User = require("./models/user")
 const PORT = process.env.PORT || 5000;
 const app = express();
 dotenv.config();
 
 
 //routes import(!usign)
-const indexRoutes = require("./routes/indexRoutes");
-const adminRoutes = require("./routes/adminRoutes");
-const blogRoutes = require("./routes/blogRoutes");
+const page = require("./routes/page");
+const admin = require("./routes/admin");
+const blog= require("./routes/blog");
 
 //mongose config
 //const uri = 'mongodb://localhost/blog-app';
@@ -47,9 +47,9 @@ app.use((req,res,next)=>{
 });
 
 //routes using
-app.use(indexRoutes);
-app.use(adminRoutes);
-app.use(blogRoutes)
+app.use(page);
+app.use(admin);
+app.use(blog)
 
 //start server
 app.listen(PORT,(err)=>{

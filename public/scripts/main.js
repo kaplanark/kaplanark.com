@@ -111,7 +111,7 @@ $(document).ready(function () {
     $(".blog-post").slideDown("slow");
     $("#hideall").show();
     $("#viewall").hide();
-    $(".search").css({ display: "block" });
+    $(".search").css({ display: "flex" });
   });
   $("#hideall").click(function () {
     $("#blogtitle").text("Latest Blog Posts");

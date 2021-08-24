@@ -10,12 +10,14 @@ router.post("/addnewblog",access,(req, res) => {
   let title = req.body.data.title;
   let subtitle = req.body.data.subtitle;
   let image = req.body.data.image;
+  let date = req.body.data.date;
   let blog = req.body.data.blog;
 
   let addnewblog = {
     title: title,
     subtitle: subtitle,
     image: image,
+    date:date,
     blog: blog,
   };
 

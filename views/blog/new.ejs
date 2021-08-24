@@ -9,12 +9,14 @@
             $('#blogpostsubmit').click(function(){
                 var title = $('#blogtitle').val();
                 var subtitle = $('#blogsubtitle').val();
-                var image = $('#blogimage').val();
+                var image = $('input[type=file]').val().replace(/C:\\fakepath\\/i, '/images/');
+                var date = $('#blogdate').val();
                 var blog = CKEDITOR.instances.blogtextarea.getData();
                 var data={
                     title:title,
                     subtitle:subtitle,
                     image:image,
+                    date:date,
                     blog:blog 
                 }
                 $.post('addnewblog',{data:data})
@@ -28,7 +30,6 @@
 <body onload='clock()'>
     <%- include ("../partials/admin-topbar.ejs") %>
     <%- include ("../partials/admin-bar.ejs") %>
-
     <!--add new blog-->
     <div class="container">
         <form action="" class="was-validated">
@@ -44,7 +45,12 @@
             </div>
             <div class="form-group mt-3 mb-4">
                 <label for="blogimage">Blog İmage</label>
-                <input type="text" class="form-control is-invalid" id="blogimage" placeholder="*" required>
+                <input type="file" class="form-control is-invalid" id="blogimage" placeholder="*" required>
+                <div class="invalid-feedback">Please write something in the text field.</div>
+            </div>
+            <div class="form-group mt-3 mb-4">
+                <label for="blogimage">Blog Date</label>
+                <input type="date" class="form-control is-invalid" id="blogdate" placeholder="*" required>
                 <div class="invalid-feedback">Please write something in the text field.</div>
             </div>
             <textarea class="form-control" name="editor" id="blogtextarea"></textarea>

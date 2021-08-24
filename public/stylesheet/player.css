@@ -25,6 +25,12 @@
   height: 200px;
   width: 200px;
 }
+.admin-init{
+  border: 2px solid #f76045;
+  margin: 1px 1px 1px 1px;
+  height: 198px;
+  width: 198px;
+}
 .plak {
   border-radius: 50%;
   object-fit: cover;

@@ -10,12 +10,16 @@
       <div class="container">
         <div class="logo-container text-center" id="logo-container">
           <div class="logo">
+            <% if(!currentUser){ %>
             <img class="profile" src="images/profile.jpg" draggable="false"/>
+            <% } else { %>
+            <a href="/admin"><img class="profile admin-init" src="images/profile.jpg" draggable="false"/></a>
+            <% } %>
             <img class="plak" src="images/plak.jpg" draggable="false" alt="music-cover" id="cover"/>
           </div> 
         </div>
         <div id="degree-bar">
-          <code class="degree"><p>Junior Web Developer</p></code>
+          <code class="degree"><p>Web Developer</p></code>
           <div class="social-links">
             <a href="https://twitter.com/" target="_blank"><i class="bi bi-twitter"></i></a>
             <a href="mailto:kaplanarkan@gmail.com"><i class="bi bi-envelope-fill"></i></a>

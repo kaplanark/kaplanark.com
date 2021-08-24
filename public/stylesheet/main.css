@@ -16,6 +16,9 @@ body {
 input{
   border-color: #e4e4e4 !important;
 }
+.degree{
+  color: #f76045;
+}
 .btn-danger {
   background: linear-gradient(to left, #f13c4e 50%, #dc3545 50%) !important;
   margin: 6px;

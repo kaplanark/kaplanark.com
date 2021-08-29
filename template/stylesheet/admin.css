@@ -28,7 +28,7 @@ input{
   background-color: #ffff;
   position: fixed;
   top: 0;
-  z-index: 3;
+  z-index: 1;
   width: 100%;
   font-size: 15px;
 }
@@ -56,14 +56,10 @@ input{
 .dropdown-toggle:hover{
   color: #999;
 }
-.dropdown-toggle i{
-  font-size: 18px;
-  font-weight: 600;
-}
 /*admin bar*/
 .admin-bar {
   position: fixed;
-  display: flex;
+  /* display: flex; */
   z-index: 1;
   align-items: center;
   height: 100%;
@@ -72,13 +68,14 @@ input{
   left: 0;
   padding-right: 1rem;
   padding-left: 1rem;
+  overflow-y: auto;
 }
 .admin-bar-list {
   margin: 0;
   padding: 0;
 }
 .admin-bar-item {
-  margin-bottom: 1rem;
+  padding: 8px 0 8px 0;
   border-bottom: 1px solid rgb(192, 192, 192);
 }
 .admin-bar-item i {

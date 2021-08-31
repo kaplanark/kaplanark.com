@@ -8,7 +8,7 @@ router.get('/', (req,res)=>{
         if(err){
             console.log(err);
         }else{
-            res.render('index',{found:found});
+            res.render('pages/index',{found:found});
         }
     });
 });

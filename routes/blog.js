@@ -48,7 +48,7 @@ router.get('/delete/:blogid',access,(req,res)=>{
   Blog.deleteOne({_id: req.params.blogid}, (err, post)=>{
       if (err)
           res.send(err);
-      res.redirect('/admin/all',)
+      res.redirect('/admin/all')
   });
 });
 
@@ -71,7 +71,6 @@ router.get('/edit/:blogid',access,(req,res)=>{
 //   let image = req.body.newdata.image;
 //   let date = req.body.newdata.date;
 //   let blog = req.body.newdata.blog;
-
 //   let updateblog = {
 //     title: title,
 //     subtitle: subtitle,

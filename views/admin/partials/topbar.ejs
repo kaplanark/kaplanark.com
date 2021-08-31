@@ -1,6 +1,6 @@
 <!--top bar-->
-<div class="top-bar" id=topbar>
-    <div class="container">
+<div class="top-bar">
+    <div class="container-fluid">
         <div class="top-bar-item text-center">
             <a id="day" class="me-2"></a>
             <a id="clock" class=""></a>
@@ -11,16 +11,16 @@
                 <i class="bi bi-person-circle"></i>
             </a>
             <ul class="dropdown-menu shadow-sm" aria-labelledby="dropdownmenü">
+                <% if(!currentUser){ %>
                 <li>
-                    <% if(!currentUser){ %>
-                    <a class="dropdown-item" href="/signin">Login</a>
+                    <a class="dropdown-item" href="/signin">login</a>
                     <% } else { %>
-                    <a class="dropdown-item" href="/signout">Logout</a>
+                    <a class="dropdown-item" href="/signout"><i class="bi bi-box-arrow-left"></i> logout</a>
                 </li>
                 <li>
-                    <a class="dropdown-item" href="/admin"><%= currentUser.username %></a>
+                    <a class="dropdown-item" href="/admin"><i class="bi bi-person"></i> <%= currentUser.username %></a>
                 </li>
-                    <% } %>
+                <% } %>
             </ul>
         </div>
     </div>

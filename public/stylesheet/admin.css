@@ -5,24 +5,27 @@
 *::before {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 /*general*/
 body {
   font-family: "Poppins", sans-serif;
   background-color: #f3f3f3;
   width: 100%;
-  padding-left: 3.7rem;
+  color: #323232;
+  overflow-x: hidden;
+  height: 100%;
+  margin: 0;
+  padding-top: 32px;
 }
-ul,
-li {
+ul,li {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
-a{
-    text-decoration: none;
+input {
+  border-color: #e4e4e4 !important;
 }
-input{
-    border-color: #e4e4e4 !important;
-  }
 /*top bar*/
 .top-bar {
   background-color: #ffff;
@@ -31,10 +34,9 @@ input{
   z-index: 3;
   width: 100%;
   font-size: 15px;
-  box-shadow: 13px -9px 6px 9px #d8d8d8;
-
+  border-bottom: 2px solid #f1f1f1;
 }
-.top-bar .container {
+.top-bar .container-fluid {
   padding-top: 5px;
   padding-bottom: 5px;
   display: flex;
@@ -48,64 +50,213 @@ input{
   font-weight: 600;
   color: #444;
 }
-.dropdown-menu{
+.dropdown-menu {
   border: 0;
   border-radius: 12px;
 }
-.dropdown-toggle{
+.dropdown-toggle {
   color: #333;
 }
-.dropdown-toggle:hover{
+.dropdown-toggle:hover {
   color: #999;
 }
-.dropdown-toggle i{
-  font-size: 18px;
+.dropdown-toggle i {
+  font-size: 15px;
   font-weight: 600;
 }
-/*admin bar*/
-.admin-bar {
-  position: fixed;
-  display: flex;
-  z-index: 1;
-  align-items: center;
-  height: 100%;
-  padding-top: 48px;
-  background: white;
-  left: 0;
-  padding-right: 1rem;
-  padding-left: 1rem;
-  /*box-shadow: -9px 4px 6px 9px #d8d8d8;*/
-  box-shadow: 15px -11px 6px 9px #d8d8d8;
+
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
 }
-.admin-bar-list {
+
+a {
+  color: #323232;
+  text-decoration: none;
+}
+
+.page-wrapper {
+  position: relative;
+  transition: 0.3s;
+  margin-left: 60px;
+}
+
+.side-menu .logo {
+  position: relative;
+}
+
+.side-menu .logo-top {
+  opacity: 0;
+  padding-top: 4px;
+  width: 40px;
+  transition: 0.1s 0.1s ease-in;
+}
+
+.side-menu .menu-toggle {
+  position: absolute;
+  left: 25%;
+  top: 20%;
+  transition: 0.2s ease-in;
+  width: 30px;
+}
+
+.side-menu .menu-toggle:hover,
+.side-menu .menu-toggle:focus {
+  padding-left: 5px;
+}
+
+.side-menu {
+  color: #444;
+  background-color: #fff;
+  overflow: hidden;
+  overflow-y: scroll;
+  position: fixed;
+  top: 0;
+  left: 0px;
+  height: 100%;
+  width: 64px;
+  transition: 0.3s;
+  white-space: nowrap;
+  z-index: 5;
+}
+
+.side-menu ul {
+  list-style: none;
   margin: 0;
   padding: 0;
 }
-.admin-bar-item {
-  margin-bottom: 1rem;
-  border-bottom: 1px solid rgb(192, 192, 192);
+
+.side-menu ul li {
+  margin: 0 8px;
+  transition: ease 0.3s;
+  box-sizing: border-box;
+  border-radius: 5px;
 }
-.admin-bar-item i {
-  font-size: 28px;
+
+.side-menu .item.list {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+}
+
+.side-menu .item.list.link:hover,
+.side-menu .item.list.link:focus {
+  color: #444;
+  transition: 0.3s;
+  background: rgb(240, 240, 240);
+  border-radius: 18px;
+}
+
+.side-menu .item.list span {
+  line-height: auto;
+}
+
+.side-menu li:hover span {
   color: #444;
 }
-.admin-bar-item i:hover {
-  color: #999;
-  transition: 0.5s ease;
+
+.side-menu .item {
+  transition: 0.3s;
 }
-.container {
-  padding-top: 48px;
+
+.side-menu ul li i {
+  padding: 0 16px 0 0;
+  font-size: 26px;
+  color: #333;
+}
+
+.side-menu ul li span {
+  font-size: 16px;
+  overflow-x: hidden;
+  transition: 0.3s ease-in;
+  color: #333;
+  opacity: 0;
+}
+
+.side-menu ul form input {
+  height: 48px;
+  width: 100%;
+  outline: none;
+  padding-left: 50px;
+  box-sizing: border-box;
+  background-color: #fff;
+  border: 0;
+  border-bottom: 1px solid #cfcfcf;
+}
+
+::placeholder {
+  font-size: 16px;
+}
+
+.side-menu ul li.b-search .item.list {
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+.side-menu ul .b-search .item.list:hover {
+  background-color: transparent;
+}
+
+/* width */
+
+.side-menu::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+
+.side-menu::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #d3d3d3;
+  border-radius: 10px;
+}
+
+/* Handle */
+
+.side-menu::-webkit-scrollbar-thumb {
+  background: #c2c2c2;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+
+.side-menu::-webkit-scrollbar-thumb:hover {
+  background: #515152;
+}
+
+/* ? This is to puch the main page to the side */
+
+.menu-active .page-wrapper {
+  transform: translateX(200px);
+}
+
+.span-active .text,
+.span-active .logo-top {
+  opacity: 1;
+  transition: 0.2s 0.1s ease-out;
+}
+
+.menu-active .side-menu {
+  width: 250px;
+}
+
+.toggle-active .side-menu .menu-toggle {
+  right: 5%;
+  transform: translateX(155px) rotate(180deg);
+  transform-origin: 0% 40%;
+  transition: 0.3s ease-in;
 }
 /*blog section*/
-.search{
+.search {
   display: flex;
   align-items: center;
   margin-top: 2rem;
   padding: 8px 16px 8px 16px;
-  border:  2px solid white;
+  border: 2px solid white;
   border-radius: 24px;
 }
-.serach-bar{
+.serach-bar {
   border: 0;
   margin: 0;
   padding: 0;
@@ -113,7 +264,7 @@ input{
   font-size: 16px;
   width: 100%;
 }
-.serach-bar:focus{
+.serach-bar:focus {
   outline: none !important;
 }
 .blog-post {
@@ -166,13 +317,4 @@ input{
   height: 16px;
   border-radius: 50%;
   margin-right: 10px;
-}
-
-@media (max-width: 991px) {
-    body {
-        padding-left: 0;
-      }
-    .admin-bar {
-        display: none;
-    }
 }

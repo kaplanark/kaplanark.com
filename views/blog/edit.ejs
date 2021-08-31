@@ -9,7 +9,7 @@
             $('#blogupdatesubmit').click(function(){
                 var title = $('#blogtitle').val();
                 var subtitle = $('#blogsubtitle').val();
-                var image = $('#blogimage');
+                var image = $('#blogimage').val();
                 var date = $('#blogdate').val();
                 var blog = CKEDITOR.instances.blogtextarea.getData();
                 var newdata={
@@ -61,6 +61,7 @@
                     <div class="mt-3 text-center">
                         <button id="blogupdatesubmit" type="submit" class="btn btn-success rounded-pill">Update Post</button>
                     </div>
+                    
                 </form>
             </div><!--edit blog-->
         </section>

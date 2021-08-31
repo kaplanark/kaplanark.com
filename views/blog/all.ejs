@@ -6,11 +6,12 @@
 <body onload="clock()">
     <%- include ("../admin/partials/topbar.ejs") %>
     <%- include ("../admin/partials/sidebar.ejs") %>
+    <%- include ("../admin/partials/alerts.ejs") %>
 <div class="page-wrapper">
   <!--blog-->
   <section id="blogposts">
     <div id="postcontainer" class="container">
-        <div class="p-5">
+        <div class="search-area">
             <div class="row justify-content-center">
               <div class="search col-lg-4 shadow-sm">
                 <input id="postsearch" type="search" class="serach-bar" placeholder="serach" onkeyup="findpost()">
@@ -32,7 +33,7 @@
                       <div class="btn-group btn-group-sm" role="group" aria-label="">
                         <a href="/delete/<%=call._id %>" type="button" class="btn btn-outline-danger"><i class="bi bi-trash2"></i></a>
                         <a href="/edit/<%=call._id %>" type="button" class="btn btn-outline-primary"><i class="bi bi-pen"></i></a>
-                        <a href="/archive/<%=call._id %>" type="button" class="btn btn-outline-secondary"> <i class="bi bi-archive"></i></a>
+                        <a href="/archive/<%=call._id %>" type="button" class="btn btn-outline-secondary rounded-0"> <i class="bi bi-archive"></i></a>
                       </div>
 
                   </div>

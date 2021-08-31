@@ -18,7 +18,8 @@ body {
   margin: 0;
   padding-top: 32px;
 }
-ul,li {
+ul,
+li {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -26,6 +27,10 @@ ul,li {
 input {
   border-color: #e4e4e4 !important;
 }
+.btn-close:focus, .btn:focus{
+  outline: none !important;
+  box-shadow: none !important;
+  }
 /*top bar*/
 .top-bar {
   background-color: #ffff;
@@ -78,7 +83,7 @@ a {
 .page-wrapper {
   position: relative;
   transition: 0.3s;
-  margin-left: 60px;
+  margin-left: 64px;
 }
 
 .side-menu .logo {
@@ -256,6 +261,10 @@ a {
   border: 2px solid white;
   border-radius: 24px;
 }
+.search-area{
+  padding-bottom: 2rem;
+  margin: 0 10px 0 10px;
+}
 .serach-bar {
   border: 0;
   margin: 0;
@@ -317,4 +326,19 @@ a {
   height: 16px;
   border-radius: 50%;
   margin-right: 10px;
+}
+
+/*alert*/
+.alert {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  right: 1%;
+  top: 5%;
+  border-radius: 32px;
+}
+.alert i {
+  font-size: 18px;
+  padding-right: 1rem;
 }

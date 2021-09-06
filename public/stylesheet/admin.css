@@ -35,7 +35,7 @@ hr{
   margin: 5px;
 }
 .btn-group .btn{
-  border-radius: 30%;
+  border-radius: 12px;
 }
 [disabled]{
   pointer-events: none;

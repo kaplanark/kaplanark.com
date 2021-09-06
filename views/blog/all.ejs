@@ -21,7 +21,11 @@
         </div>
         <div class="row">
           <% found.forEach((call)=>{ %>
+<<<<<<< HEAD
             <div class="col-lg-4 col-md-6 col-sm-12 blog-post">
+=======
+            <div class="col-lg-4 blog-post">
+>>>>>>> adef1428e4885c147cd3cd7ff68eefa977100259
               <div class="post-card card shadow-sm">
                 <div class="card-header pt-3">
                   <time><%= call.date %></time>
@@ -30,10 +34,17 @@
                   <div class="card-title"><h4><%= call.title %></h4></div>
                   <p><%= call.subtitle %></p>
                   <div class="card-footer"><hr>
+<<<<<<< HEAD
                     <div class="btn-group" role="group">
                       <a href="/blogs/<%= call._id %>" type="button" class="btn btn-outline-dark"><i class="bi bi-eye"></i></a>
                       <a href="/delete/<%=call._id %>" id="delete-post-btn" type="button" class="btn btn-outline-danger"><i class="bi bi-trash2"></i></a>
                       <a href="/edit/<%=call._id %>" type="button" class="btn btn-outline-primary"><i class="bi bi-pen"></i></a>
+=======
+                    <div class="btn-group">
+                      <a href="/blogs/<%= call._id %>" type="button" class="btn btn-outline-primary"><i class="bi bi-eye"></i></a>
+                      <a href="/delete/<%=call._id %>" type="button" class="btn btn-outline-danger"><i class="bi bi-trash2"></i></a>
+                      <a href="/edit/<%=call._id %>" type="button" class="btn btn-outline-warning"><i class="bi bi-pen"></i></a>
+>>>>>>> adef1428e4885c147cd3cd7ff68eefa977100259
                       <a href="/archive/<%=call._id %>" type="button" class="btn btn-outline-secondary"> <i class="bi bi-archive"></i></a>
                     </div>
                   </div>
@@ -42,9 +53,15 @@
             </div>
             <% }); %>
         </div>
+<<<<<<< HEAD
       </div>
     </div><!--blog-->
   </section>
+=======
+    </div>
+  </section><!--blog-->
+</div>
+>>>>>>> adef1428e4885c147cd3cd7ff68eefa977100259
 <%- include ("../admin/partials/footer.ejs") %>
 </body>
 </html>

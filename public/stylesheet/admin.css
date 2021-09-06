@@ -136,11 +136,11 @@ a {
   background-color: #fff;
   box-shadow: -3px -2px 8px 0 rgb(0 0 0 / 20%);
   -webkit-box-shadow: -3px -2px 8px 0 rgb(0 0 0 / 20%);
-  clip: rect(2px,1000000px,10000000px,0px);
+  clip: rect(2px,100000px,100000px,0px);
   overflow: hidden;
   overflow-y: auto;
   position: fixed;
-  top: 30px;
+  transform: translateY(-2px);
   padding-bottom: 30px;
   left: 0px;
   height: 100%;

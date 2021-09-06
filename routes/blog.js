@@ -7,7 +7,6 @@ router.get("/addnewblog",access,(req, res) => {
   res.render("blog/new");
 });
 router.post("/addnewblog",access,(req, res) => {
-  console.log(req.body.data);
   let title = req.body.data.title;
   let subtitle = req.body.data.subtitle;
   let image = req.body.data.image;
@@ -24,8 +23,7 @@ router.post("/addnewblog",access,(req, res) => {
 
   Blog.create(addnewblog)
     .then((addnewblog) => {
-      console.log(addnewblog);
-      res.status(201).json(addnewblog);
+      res.status(201).json(addnewblog); 
     })
     .catch((err) => {
       console.log(err);
@@ -46,9 +44,11 @@ router.get('/blogs/:blogid', (req,res)=>{
 //remove blog
 router.get('/delete/:blogid',access,(req,res)=>{  
   Blog.deleteOne({_id: req.params.blogid}, (err, post)=>{
-      if (err)
-          res.send(err);
-      res.redirect('/admin/all')
+      if(err){
+        res.send(err);
+      }else{
+        res.redirect('/admin/all');
+      };  
   });
 });
 
@@ -59,35 +59,33 @@ router.get('/edit/:blogid',access,(req,res)=>{
         res.render("blog/edit",{found:found})
     })
     .catch((err)=>{
-        console.log(err);
         res.send(err);
     });
 });
 
-// router.post("/updateblog/:blogid",access,(req, res) => {
-//   console.log(req.body.newdata);
-//   let title = req.body.newdatadata.title;
-//   let subtitle = req.body.newdata.subtitle;
-//   let image = req.body.newdata.image;
-//   let date = req.body.newdata.date;
-//   let blog = req.body.newdata.blog;
-//   let updateblog = {
-//     title: title,
-//     subtitle: subtitle,
-//     image: image,
-//     date:date,
-//     blog: blog,
-//   };
-//   Blog.updateOne({_id: req.params.blogid},updateblog)
-//     .then((updateblog) => {
-//       console.log(updateblog);
-//       res.status(201).json(updateblog);
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//       res.send(err);
-//     });
-// });
+router.post("/updateblog",access,(req, res) => {
+  let id = req.body.data.id;
+  let title = req.body.data.title;
+  let subtitle = req.body.data.subtitle;
+  let image = req.body.data.image;
+  let date = req.body.data.date;
+  let blog = req.body.data.blog;
+  let updateblog = {
+    title: title,
+    subtitle: subtitle,
+    image: image,
+    date: date,
+    blog: blog
+  };
+  Blog.updateOne({_id: id},updateblog)
+    .then((updateblog) => {
+      res.status(201).json(updateblog);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.send(err);
+    });
+});
 
 //middleware
 function access(req, res, next) {

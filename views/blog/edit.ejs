@@ -4,68 +4,63 @@
     <%- include ("../admin/partials/header.ejs") %>
     <!--jquery 3.6.0-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!-- <script>
+    <script>
         $(document).ready(function(){
             $('#blogupdatesubmit').click(function(){
+                var id = $('#id').val();
                 var title = $('#blogtitle').val();
                 var subtitle = $('#blogsubtitle').val();
                 var image = $('#blogimage').val();
                 var date = $('#blogdate').val();
                 var blog = CKEDITOR.instances.blogtextarea.getData();
-                var newdata={
-                    title:title,
-                    subtitle:subtitle,
-                    image:image,
-                    date:date,
-                    blog:blog
-                }
-                $.post('updateblog/:blogid',{newdata:newdata})
-                .then(function(udapted){
-                    console.log(updated);
-                });
+                var data={id:id,title:title,subtitle:subtitle,image:image,date:date,blog:blog}
+                $.post('/updateblog',{data:data}).then(function(udapted){});
             });
         });
+    </script>
     </script> -->
 </head>
 <body onload='clock()'>
     <%- include ("../admin/partials/topbar.ejs") %>
     <%- include ("../admin/partials/sidebar.ejs") %>
-    <div class="page-wrapper">
-        <section>
-            <!--edit blog-->
-            <div class="container">
-                <form action="" class="was-validated">
-                    <div class="form-group">
-                        <label for="blogtitle">Blog Title</label>
-                        <input type="text" class="form-control is-invalid" id="blogtitle" value="<%= found.title %>" required>
-                        <div class="invalid-feedback">Please write something in the text field.</div>
-                    </div>
-                    <div class="form-group mt-3">
-                        <label for="blogsubtitle">Blog Subtitle</label>
-                        <input type="text" class="form-control is-invalid" id="blogsubtitle" value="<%= found.subtitle %>" required>
-                        <div class="invalid-feedback">Please write something in the text field.</div>
-                    </div>
-                    <div class="form-group mt-3 mb-4">
-                        <label for="blogimage">Blog İmage</label>
-                        <input type="text" class="form-control is-invalid" id="blogimage" value="<%= found.image %>" required>
-                        <div class="invalid-feedback">Please write something in the text field.</div>
-                    </div>
-                    <div class="form-group mt-3 mb-4">
-                        <label for="blogimage">Blog Date</label>
-                        <input type="date" class="form-control is-invalid" id="blogdate" value="<%= found.date %>" required>
-                        <div class="invalid-feedback">Please write something in the text field.</div>
-                    </div>
-                    <textarea class="form-control" name="editor" id="blogtextarea">
-                        <%= found.blog%>
-                    </textarea>
-                    <div class="mt-3 text-center">
-                        <button id="blogupdatesubmit" type="submit" class="btn btn-success rounded-pill">Update Post</button>
-                    </div>
-                    
-                </form>
-            </div><!--edit blog-->
-        </section>
-    </div>
+    <section class="page-wrapper">
+        <!--edit blog-->
+        <div class="container">
+            <form action="" class="was-validated">
+                <div class="form-group">
+                    <label for="id">Blog İd</label>
+                  <input type="text" class="form-control mb-3" id="id" value="<%= found._id%>" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="blogtitle">Blog Title</label>
+                    <input type="text" class="form-control is-invalid" id="blogtitle" value="<%= found.title %>" required>
+                    <div class="invalid-feedback">Please write something in the text field.</div>
+                </div>
+                <div class="form-group mt-3">
+                    <label for="blogsubtitle">Blog Subtitle</label>
+                    <input type="text" class="form-control is-invalid" id="blogsubtitle" value="<%= found.subtitle %>" required>
+                    <div class="invalid-feedback">Please write something in the text field.</div>
+                </div>
+                <div class="form-group mt-3 mb-4">
+                    <label for="blogimage">Blog İmage</label>
+                    <input type="text" class="form-control is-invalid" id="blogimage" value="<%= found.image %>" required>
+                    <div class="invalid-feedback">Please write something in the text field.</div>
+                </div>
+                <div class="form-group mt-3 mb-4">
+                    <label for="blogimage">Blog Date</label>
+                    <input type="date" class="form-control is-invalid" id="blogdate" value="<%= found.date %>" required>
+                    <div class="invalid-feedback">Please write something in the text field.</div>
+                </div>
+                <textarea class="form-control" name="editor" id="blogtextarea">
+                    <%= found.blog%>
+                </textarea>
+                <div class="mt-3 text-center">
+                    <button id="blogupdatesubmit" type="submit" class="btn btn-success rounded-pill">Update Post</button>
+                </div>
+                
+            </form>
+        </div><!--edit blog-->
+    </section>
     
     <%- include ("../admin/partials/footer.ejs") %>
     <script>

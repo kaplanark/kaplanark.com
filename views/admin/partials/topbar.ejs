@@ -1,7 +1,7 @@
 <!--top bar-->
 <div class="top-bar">
     <div class="container-fluid">
-        <div class="top-bar-item text-center">
+        <div class="top-bar-item text-center" bury>
             <a id="day" class="me-2"></a>
             <a id="clock" class=""></a>
         </div>
@@ -13,13 +13,28 @@
             <ul class="dropdown-menu shadow-sm" aria-labelledby="dropdownmenü">
                 <% if(!currentUser){ %>
                 <li>
-                    <a class="dropdown-item" href="/signin">login</a>
-                    <% } else { %>
-                    <a class="dropdown-item" href="/signout"><i class="bi bi-box-arrow-left"></i> logout</a>
+                    <a class="dropdown-item" href="/signin">login</a> 
+                </li>
+                <% } else { %>
+                <li class="text-center py-3">
+                    <img src="/images/profile.jpg" alt="" class="img-fluid rounded-pill user-profile">
                 </li>
                 <li>
-                    <a class="dropdown-item" href="/admin"><i class="bi bi-person"></i> <%= currentUser.username %></a>
+                    <a class="dropdown-item " href="/admin"><i class="bi bi-person"></i> <%= currentUser.username %></a>
                 </li>
+                <li>
+                    <a class="dropdown-item" href="/signout"><i class="bi bi-box-arrow-left"></i> logout</a>
+                </li>
+                
+                <hr>
+                <ul>
+                    <li class="d-flex justify-content-evenly">
+                        <a href=""><i class="bi bi-gear-fill"></i></a>
+                        <a href=""><i class="bi bi-bell-fill"></i></a>
+                        <a href="" disabled><i class="bi bi-lightbulb-fill"></i></a>
+                        <!-- <a href=""><i class="bi bi-lightbulb-off-fill"></i></a> -->
+                    </li>
+                </ul>
                 <% } %>
             </ul>
         </div>

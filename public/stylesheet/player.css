@@ -12,6 +12,8 @@
   margin: 2rem 0 3rem 0;
   z-index: 3;
   padding: 0 1rem 0 1rem;
+  box-shadow: -1px -3px 8px 0 rgb(0 0 0 / 20%);
+  -webkit-box-shadow: inset -1px -3px 8px 0 rgb(0 0 0 / 20%);
 }
 .logo-container{
   position: relative;
@@ -24,6 +26,8 @@
   object-fit: cover;
   height: 200px;
   width: 200px;
+  box-shadow: -1px -3px 8px 0 rgb(0 0 0 / 20%);
+  -webkit-box-shadow: inset -1px -3px 8px 0 rgb(0 0 0 / 20%);
 }
 .admin-init{
   border: 2px solid #f76045;

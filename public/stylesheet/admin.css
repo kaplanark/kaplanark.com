@@ -77,7 +77,7 @@ hr{
   color: #444;
 }
 .dropdown-menu {
-  border: 0;
+  border: 1px solid rgb(221, 221, 221);
   border-radius: 12px;
 }
 .dropdown-toggle {
@@ -104,7 +104,7 @@ a {
 .page-wrapper {
   position: relative;
   transition: 0.3s;
-  padding-left: 64px;
+  padding: 24px 0 0 64px;
 }
 .side-menu .logo {
   position: relative;
@@ -113,6 +113,7 @@ a {
 .side-menu .logo-top {
   opacity: 0;
   padding-top: 4px;
+  margin-left: 10px;
   width: 40px;
   transition: 0.1s 0.1s ease-in;
 }
@@ -140,6 +141,7 @@ a {
   overflow-y: auto;
   position: fixed;
   top: 30px;
+  padding-bottom: 30px;
   left: 0px;
   height: 100%;
   width: 64px;
@@ -228,7 +230,7 @@ a {
 }
 
 .side-menu::-webkit-scrollbar {
-  width: 5px;
+  width: 2px;
 }
 
 .side-menu::-webkit-scrollbar-track {

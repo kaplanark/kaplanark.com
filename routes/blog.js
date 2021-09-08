@@ -47,6 +47,7 @@ router.get('/delete/:blogid',access,(req,res)=>{
       if(err){
         res.send(err);
       }else{
+        req.flash("success", "transaction successful");
         res.redirect('/admin/all');
       };  
   });

@@ -4,7 +4,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
-const expressSession = require("express-session");
+const session = require("express-session");
+const flash = require("connect-flash");
 const User = require("./models/user")
 const PORT = process.env.PORT || 5000;
 const app = express();
@@ -17,23 +18,37 @@ const admin = require("./routes/admin");
 const blog= require("./routes/blog");
 
 //mongose config
-//const uri = 'mongodb://localhost/blog-app';
 mongoose.connect(process.env.DATABASE_URL,{useNewUrlParser: true,useUnifiedTopology: true});
 
 //app config
 app.set("view engine", "ejs");
 app.use(express.static("public"));
+app.use('/styles',express.static(__dirname + '/node_modules/bootstrap/dist/css'));
+app.use('/styles',express.static(__dirname + '/node_modules/bootstrap-icons/font'));
+app.use('/styles',express.static(__dirname + '/styles'));
+app.use('/scripts',express.static(__dirname + '/node_modules/bootstrap/dist/js'));
+app.use('/scripts',express.static(__dirname + '/node_modules/jquery/dist'));
+app.use('/scripts',express.static(__dirname + '/scripts'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //passport config
 app.use(
-  require("express-session")({
-    secret: "güvenlik cümlemiz",
+  session({
+    cookie: { maxAge: 60000 * 60 }, //one hour
+    secret: "tank destroyer",
     resave: false,
     saveUninitialized: false,
   })
 );
+app.use(flash());
+app.use(function (req, res, next) {
+  res.locals.success = req.flash("success");
+  res.locals.errors = req.flash("error");
+  res.locals.message = req.flash("message");
+  res.locals.info = req.flash("info");
+  next();
+});
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));

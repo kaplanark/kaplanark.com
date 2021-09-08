@@ -8,7 +8,7 @@
   <%- include ("../admin/partials/sidebar.ejs") %>
   
   <section class="page-wrapper">
-    <div class="overlay"></div>
+    <%- include ("../admin/partials/alerts.ejs") %>
     <div id="blogposts"><!--blog-->
       <div id="postcontainer" class="container">
         <div class="search-area">
@@ -45,5 +45,12 @@
     </div><!--blog-->
   </section>
 <%- include ("../admin/partials/footer.ejs") %>
+<script>
+  $(document).ready (function(){
+      window.setTimeout(function () { 
+          $(".alert").alert('close'); 
+      }, 6000);    
+  });
+</script>
 </body>
 </html>

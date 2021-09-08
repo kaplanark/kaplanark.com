@@ -2,11 +2,16 @@
 <html lang="en">
 <head>
     <%- include ("../admin/partials/header.ejs") %>
+    <style>
+      #card-menu{
+        font-size: 20px;
+        color: #555;
+      }
+    </style>
 </head>
 <body onload="clock()">
   <%- include ("../admin/partials/topbar.ejs") %>
   <%- include ("../admin/partials/sidebar.ejs") %>
-  
   <section class="page-wrapper">
     <%- include ("../admin/partials/alerts.ejs") %>
     <div id="blogposts"><!--blog-->
@@ -21,23 +26,34 @@
         <div class="row">
           <% found.forEach((call)=>{ %>
             <div class="col-lg-4 col-md-6 col-sm-12 blog-post">
-              <div class="post-card card shadow-sm">
-                <div class="card-header pt-3">
-                  <time><%= call.date %></time>
-                </div>
-                <div class="card-body">
-                  <div class="card-title"><h4><%= call.title %></h4></div>
-                  <p><%= call.subtitle %></p>
-                  <div class="card-footer"><hr>
-                    <div class="btn-group" role="group">
-                      <a href="/blogs/<%= call._id %>" type="button" class="btn btn-outline-dark" target="_blank"><i class="bi bi-eye"></i></a>
-                      <a href="/delete/<%=call._id %>" id="delete-post-btn" type="button" class="btn btn-outline-danger"><i class="bi bi-trash2"></i></a>
-                      <a href="/edit/<%=call._id %>" type="button" class="btn btn-outline-primary"><i class="bi bi-pen"></i></a>
-                      <a href="/archive/<%=call._id %>" type="button" class="btn btn-outline-secondary"> <i class="bi bi-archive"></i></a>
+                <div class="post-card card shadow-sm">
+                  <div class="card-header ms-auto me-3 mt-2">
+                    <div class="dropdown dropstart">
+                      <a class="bi-three-dots-vertical" type="button" id="card-menu" data-bs-toggle="dropdown" aria-expanded="false">
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="card-menu">
+                        <li>
+                          <a href="/delete/<%=call._id %>" class="dropdown-item bi-trash2-fill"> Delete</a>
+                        </li>
+                        <li>
+                          <a href="/edit/<%=call._id %>" class="dropdown-item bi-pen-fill"> Edit</a>
+                        </li>
+                        <li>
+                          <a href="/archive" class="dropdown-item bi-archive-fill"> Archive</a>
+                        </li>
+                      </ul>
                     </div>
-                  </div>
+                  </div><hr>
+                  <a href="/blogs/<%= call._id %>">
+                    <div class="card-body">
+                      <div class="card-title"><h4><%= call.title %></h4></div>
+                      <p><%= call.subtitle %></p>
+                      <div class="card-footer">
+                        <time><%= call.date %></time>
+                      </div>
+                    </div>
+                  </a>
                 </div>
-              </div>
             </div>
             <% }); %>
         </div>
@@ -45,12 +61,5 @@
     </div><!--blog-->
   </section>
 <%- include ("../admin/partials/footer.ejs") %>
-<script>
-  $(document).ready (function(){
-      window.setTimeout(function () { 
-          $(".alert").alert('close'); 
-      }, 6000);    
-  });
-</script>
 </body>
 </html>

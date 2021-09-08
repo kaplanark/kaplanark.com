@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Raleway&display=swap");
 @import url("/styles/bootstrap-icons.css");
-@import url("/player.css");
+@import url("/styles/player.css");
+@import url("/styles/footer.css");
 *,
 *::after,
 *::before {
@@ -356,19 +357,7 @@ section {
   background: transparent;
   border: 0;
 }
-/*footer*/
-footer {
-  background: #fff;
-  padding: 12px;
-  border-top-left-radius: 24px;
-  border-top-right-radius: 24px;
-}
-footer a,
-footer span {
-  font-size: 14px;
-  font-weight: 600;
-  color: #333;
-}
+
 /*signup and signin*/
 .signup-area{
   background: white;

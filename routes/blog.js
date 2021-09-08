@@ -33,7 +33,7 @@ router.post("/addnewblog",access,(req, res) => {
 router.get('/blogs/:blogid', (req,res)=>{
     Blog.findById(req.params.blogid)
     .then((found)=>{
-        res.render("blog/show",{found:found})
+        res.render("pages/show",{found:found})
     })
     .catch((err)=>{
         console.log(err);
@@ -47,7 +47,7 @@ router.get('/delete/:blogid',access,(req,res)=>{
       if(err){
         res.send(err);
       }else{
-        req.flash("success", "transaction successful");
+        req.flash("success", "Transaction successful");
         res.redirect('/admin/all');
       };  
   });
@@ -62,6 +62,11 @@ router.get('/edit/:blogid',access,(req,res)=>{
     .catch((err)=>{
         res.send(err);
     });
+});
+
+router.get('/archive',access,(req,res)=>{
+  req.flash("message", "Not possible yet");
+  res.redirect('/admin/all');
 });
 
 router.post("/updateblog",access,(req, res) => {

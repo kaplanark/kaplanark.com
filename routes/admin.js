@@ -4,40 +4,8 @@ const Blog = require("../models/blog");
 const passport = require("passport");
 const router = express.Router();
 
-let adminActions = [
-  {
-    actionId: 1,
-    actionName: "changeHomeImage",
-    displayName: "Change home image",
-  },
-  {
-    actionId: 2,
-    actionName: "changeHomeText",
-    displayName: "Change home text",
-  },
-  {
-    actionId: 3,
-    actionName: "changeAboutImage",
-    displayName: "Change about image",
-  },
-  {
-    actionId: 4,
-    actionName: "changeAbouText",
-    displayName: "Change about text",
-  },
-  {
-    actionId: 5,
-    actionName: "addNewBlog",
-    displayName: "Add new blog",
-  },
-  {
-    actionId: 5,
-    actionName: "listAllBlog",
-    displayName: "List all blog",
-  },
-];
 router.get("/admin", access, (req, res) => {
-  res.render("admin/admin", { adminActions: adminActions });
+  res.render("admin/admin"); //, { adminActions: adminActions }
 });
 
 //blog all send admin all page
@@ -82,6 +50,36 @@ router.post("/signup", access, (req, res) => {
 router.get("/signout", (req, res) => {
   req.logout();
   res.redirect("/");
+});
+
+//files router
+router.get("/admin/files", access, (req, res) => {
+  req.flash("message", "Not possible yet");
+  res.redirect('/admin');
+});
+
+//notes router
+router.get("/admin/notes", access, (req, res) => {
+  req.flash("message", "Not possible yet");
+  res.redirect('/admin');
+});
+
+//notification router
+router.get("/admin/notification", access, (req, res) => {
+  req.flash("message", "Not possible yet");
+  res.redirect('/admin');
+});
+
+//users router
+router.get("/admin/users", access, (req, res) => {
+  req.flash("message", "Not possible yet");
+  res.redirect('/admin');
+});
+
+//settings router
+router.get("/admin/settings", access, (req, res) => {
+  req.flash("message", "Not possible yet");
+  res.redirect('/admin');
 });
 
 //middleware

@@ -1,0 +1,12 @@
+footer {
+  background: #fff;
+  padding: 12px;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+}
+footer a,
+footer span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}

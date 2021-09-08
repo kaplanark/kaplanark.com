@@ -144,10 +144,15 @@
     background: #515152;
   }
   .menu-active .page-wrapper {
-    /* transform: translateX(200px); */
     opacity: 0.5;
     pointer-events: none;
     cursor: default;
+  }
+  .menu-active .search-to-do{
+    transform: translateX(200px);
+    opacity: 1;
+    pointer-events:all;
+    cursor:auto;
   }
   .span-active .text,
   .span-active .logo-top {

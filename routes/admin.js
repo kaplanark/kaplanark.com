@@ -1,28 +1,13 @@
 const express = require("express");
-const User = require("../models/user");
-const Blog = require("../models/blog");
+const adminConroller = require("../controller/admin");
 const passport = require("passport");
 const router = express.Router();
 
-router.get("/admin", access, (req, res) => {
-  res.render("admin/admin"); //, { adminActions: adminActions }
-});
-
-//blog all send admin all page
-router.get('/admin/all',access, (req,res)=>{
-  Blog.find({},(err,found)=>{
-      if(err){
-          console.log(err);
-      }else{
-          res.render('blog/all',{found:found});
-      }
-  });
-});
-//signin page router
-router.get("/signin", (req, res) => {
-  res.render("admin/signin");
-});
-router.post("/signin",passport.authenticate("local", {
+router.get("/admin", access, adminConroller.renderPage);
+router.get("/signin", adminConroller.signIn);
+router.post(
+  "/signin",
+  passport.authenticate("local", {
     successRedirect: "/admin",
     failureRedirect: "/signin",
   }),
@@ -33,18 +18,7 @@ router.post("/signin",passport.authenticate("local", {
 router.get("/signup", access, (req, res) => {
   res.render("admin/signup");
 });
-router.post("/signup", access, (req, res) => {
-  let newUser = new User({ username: req.body.username });
-  User.register(newUser, req.body.password, (err, user) => {
-    if (err) {
-      console.log(err);
-      res.redirect("/signup");
-    }
-    passport.authenticate("local")(req, res, () => {
-      res.redirect("/");
-    });
-  });
-});
+router.post("/signup", access, adminConroller.signUp);
 
 //signout router
 router.get("/signout", (req, res) => {
@@ -53,34 +27,19 @@ router.get("/signout", (req, res) => {
 });
 
 //files router
-router.get("/admin/files", access, (req, res) => {
-  req.flash("message", "Not possible yet");
-  res.redirect('/admin');
-});
+router.get("/admin/files", access, adminConroller.getFlah);
 
 //notes router
-router.get("/admin/notes", access, (req, res) => {
-  req.flash("message", "Not possible yet");
-  res.redirect('/admin');
-});
+router.get("/admin/notes", access, adminConroller.getFlah);
 
 //notification router
-router.get("/admin/notification", access, (req, res) => {
-  req.flash("message", "Not possible yet");
-  res.redirect('/admin');
-});
+router.get("/admin/notification", access, adminConroller.getFlah);
 
 //users router
-router.get("/admin/users", access, (req, res) => {
-  req.flash("message", "Not possible yet");
-  res.redirect('/admin');
-});
+router.get("/admin/users", access, adminConroller.getFlah);
 
 //settings router
-router.get("/admin/settings", access, (req, res) => {
-  req.flash("message", "Not possible yet");
-  res.redirect('/admin');
-});
+router.get("/admin/settings", access, adminConroller.getFlah);
 
 //middleware
 function access(req, res, next) {

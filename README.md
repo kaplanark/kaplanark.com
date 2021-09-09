@@ -9,6 +9,7 @@ My personal web site and blog page
         <li><code>DATABASE_URL = < your mongodb atlas uri ></code></li>
     </ul>
     <li>In the next step <code>npm i</code> Let's install the required npm modules.</li>
+    <li><code>npm i --save-dev nodemon</code></li>
     <li>To start running <code>npm start</code></li>
 </ul>
 

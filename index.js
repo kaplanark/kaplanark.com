@@ -27,7 +27,7 @@ mongoose.connect(process.env.DATABASE_URL,{
   if(err){
     return console.log(err);
   }else{
-    console.log("Mongoose connetcion");
+    console.log("Mongoose connetcion - Ready state is:",mongoose.connection.readyState);
   }
 });
 

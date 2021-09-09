@@ -1,7 +1,7 @@
+const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
-const express = require("express");
-const bodyParser = require("body-parser");
+const parser = require("body-parser");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const session = require("express-session");
@@ -29,8 +29,8 @@ app.use('/styles',express.static(__dirname + '/styles'));
 app.use('/scripts',express.static(__dirname + '/node_modules/bootstrap/dist/js'));
 app.use('/scripts',express.static(__dirname + '/node_modules/jquery/dist'));
 app.use('/scripts',express.static(__dirname + '/scripts'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(parser.json());
+app.use(parser.urlencoded({ extended: true }));
 
 //passport config
 app.use(

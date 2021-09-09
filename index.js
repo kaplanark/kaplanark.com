@@ -18,7 +18,18 @@ const admin = require("./routes/admin");
 const blog= require("./routes/blog");
 
 //mongose config
-mongoose.connect(process.env.DATABASE_URL,{useNewUrlParser: true,useUnifiedTopology: true});
+mongoose.connect(process.env.DATABASE_URL,{
+  useFindAndModify: false,
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+},function(err){
+  if(err){
+    return console.log(err);
+  }else{
+    console.log("Mongoose connetcion");
+  }
+});
 
 //app config
 app.set("view engine", "ejs");
@@ -70,6 +81,7 @@ app.use(blog)
 app.listen(PORT,(err)=>{
   if (err) {
     console.log(err);
+  }else{
+    console.log(`App started port: ${PORT}`);
   }
-  console.log(`App started port: ${PORT}`);
 });

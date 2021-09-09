@@ -4,16 +4,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>page</title>
-  <!--favicon-->
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <title><%= found.title %> </title>
   <link rel="stylesheet" type="text/css" href="/styles/bootstrap.min.css"/>
   <link rel="stylesheet" href="/styles/main.css">
 </head>
 
 <body onload="clock()">
   <%- include ("../partials/topbar.ejs") %>
-  <!--navigation bar-->
   <nav class="navbar navbar-expand-custom" id="mainnav">
     <div class="container">
       <a class="navbar-brand" href=""></a>
@@ -34,9 +31,6 @@
       </div>
     </div>
   </nav>
-  <!--navigation bar-->
-
-  <!--show post-->
   <section class="show-post">
     <div class="container col-lg-10">
       <div class="post-title text-center" style="padding-top: 10rem;">
@@ -64,22 +58,7 @@
       </div>
     </div>
   </section>
-  <!--projects-->
-  <!--footer-->
-  <footer>
-    <div class="container text-center">
-      <span>Mix :</span>
-      <code>Bootstrap {v5, icons} <span>|</span> JavaScript {jquery, bootsrapjs} <span>|</span> NodeJs {npm,express,express-session,ejs,body-parser,passport,passport-local} <span>|</span> MongoDB {mongoose,passport-local-mongoose"}</code>
-      <span>.</span>
-    </div>
-  </footer>
-  <!--footer-->
-  <!--jquery 3.6.0-->
-  <script src="/scripts/jquery.min.js"></script>
-  <!--bootstrap 4.0.0 scripts-->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
-  <!--main scripts-->
-  <script src="/scripts/main.js"></script>
+  <%- include("../partials/footer.ejs") %>
 </body>
 
 </html>

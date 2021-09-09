@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <%- include ("../admin/partials/header.ejs") %>
-    <!--jquery 3.6.0-->
     <script src="/scripts/jquery.min.js"></script>
     <script>
         $(document).ready(function(){
@@ -31,7 +30,6 @@
     <%- include ("../admin/partials/topbar.ejs") %>
     <%- include ("../admin/partials/sidebar.ejs") %>
     <section class="page-wrapper">
-        <!--add new blog-->
         <div class="container">
             <form action="" class="was-validated">
                 <div class="form-group">
@@ -59,9 +57,8 @@
                     <button id="blogpostsubmit" type="submit" class="btn btn-secondary rounded-pill">Add Post</button>
                 </div>   
             </form>
-        </div><!--add new blog-->
+        </div>
     </section>
-    
     <%- include ("../admin/partials/footer.ejs") %>
     <script>
         CKEDITOR.replace('editor');

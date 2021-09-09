@@ -8,15 +8,8 @@
   <%- include ("../admin/partials/sidebar.ejs") %>
   <section class="page-wrapper search-to-do">
     <%- include ("../admin/partials/alerts.ejs") %>
-    <div id="blogposts"><!--blog-->
+    <div id="blogposts">
       <div id="postcontainer" class="container">
-        <!-- <div class="search-area">
-          <div class="row justify-content-center">
-            <div class="search col-lg-4 shadow-sm">
-              <input  type="search" class="serach-bar" placeholder="serach" onkeyup="findpost()">
-            </div>
-          </div>
-        </div> -->
         <div class="row">
           <% found.forEach((call)=>{ %>
             <div class="col-lg-4 col-md-6 col-sm-12 blog-post">
@@ -52,7 +45,7 @@
             <% }); %>
         </div>
       </div>
-    </div><!--blog-->
+    </div>
   </section>
 <%- include ("../admin/partials/footer.ejs") %>
 </body>

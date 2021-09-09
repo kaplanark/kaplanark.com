@@ -32,7 +32,7 @@ const newBlog = async (req,res) => {
 const seeBlog = async (req,res) => {
   Blog.findById(req.params.blogid)
     .then((found) => {
-      res.render("pages/show", { found: found });
+      res.render("pages/show", {found: found });
     })
     .catch((err) => {
       console.log(err);

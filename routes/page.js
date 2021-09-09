@@ -1,5 +1,6 @@
 const express = require('express');
 const Blog = require("../models/blog");
+const Page = require("../models/page");
 const router = express.Router();
 
 //index page router
@@ -8,13 +9,9 @@ router.get('/', (req,res)=>{
         if(err){
             console.log(err);
         }else{
-            res.render('pages/index',{found:found});
+            res.render('pages/index',{title:'page title',found:found});
         }
     });
-});
-//resume page router
-router.get('/resume', (req,res)=>{
-    res.render('resume');
 });
 
 module.exports= router;

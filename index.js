@@ -18,7 +18,7 @@ const admin = require("./routes/admin");
 const blog= require("./routes/blog");
 
 //mongose config
-mongoose.connect(process.env.DATABASE_URL,{
+mongoose.connect(process.env.DATABASE_URI,{
   useFindAndModify: false,
   useNewUrlParser: true,
   useUnifiedTopology: true,

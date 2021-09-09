@@ -1,16 +1,16 @@
 const User = require("../models/user");
 //rendering
-const renderPage = async (req, res, next) => {
+const renderPage = async (req,res) => {
   res.render("admin/admin");
 };
 
 //sign in
-const signIn = async (req, res, next) => {
+const signIn = async (req,res) => {
   res.render("admin/signin");
 };
 
 //sign up
-const signUp = async (req, res, next) => {
+const signUp = async (req,res) => {
   let newUser = new User({ username: req.body.username });
   User.register(newUser, req.body.password, (err, user) => {
     if (err) {
@@ -24,7 +24,7 @@ const signUp = async (req, res, next) => {
 };
 
 //getFlash
-const getFlah = async (req, res, next) => {
+const getFlah = async (req,res) => {
   req.flash("message", "Not possible yet");
   res.redirect("/admin");
 };

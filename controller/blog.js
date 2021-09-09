@@ -1,10 +1,10 @@
 const Blog = require("../models/blog");
 //render page
-const renderPage = async (req, res, next) => {
+const renderPage = async (req,res) => {
   res.render("blog/new");
 };
 //new
-const newBlog = async (req, res, next) => {
+const newBlog = async (req,res) => {
   let title = req.body.data.title;
   let subtitle = req.body.data.subtitle;
   let image = req.body.data.image;
@@ -29,7 +29,7 @@ const newBlog = async (req, res, next) => {
     });
 };
 //see
-const seeBlog = async (req, res, next) => {
+const seeBlog = async (req,res) => {
   Blog.findById(req.params.blogid)
     .then((found) => {
       res.render("pages/show", { found: found });
@@ -40,7 +40,7 @@ const seeBlog = async (req, res, next) => {
     });
 };
 //all
-const allBlog = async (req, res, next) => {
+const allBlog = async (req,res) => {
   Blog.find({}, (err, found) => {
     if (err) {
       console.log(err);
@@ -50,7 +50,7 @@ const allBlog = async (req, res, next) => {
   });
 };
 //delete
-const deleteBlog = async (req, res, next) => {
+const deleteBlog = async (req,res) => {
   Blog.deleteOne({ _id: req.params.blogid }, (err, post) => {
     if (err) {
       res.send(err);
@@ -61,7 +61,7 @@ const deleteBlog = async (req, res, next) => {
   });
 };
 //edit
-const editBlog = async (req, res, next) => {
+const editBlog = async (req,res) => {
   Blog.findById(req.params.blogid)
     .then((found) => {
       res.render("blog/edit", { found: found });
@@ -71,12 +71,12 @@ const editBlog = async (req, res, next) => {
     });
 };
 
-const archiveBlog = async (req, res, next) => {
+const archiveBlog = async (req,res) => {
   req.flash("message", "Not possible yet");
   res.redirect("/admin/all");
 };
 //update
-const updateBlog = async (req, res, next) => {
+const updateBlog = async (req,res) => {
   let id = req.body.data.id;
   let title = req.body.data.title;
   let subtitle = req.body.data.subtitle;
